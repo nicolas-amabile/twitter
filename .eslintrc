@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/forbid-prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "arrow-parens": "off"
+  }
+}
