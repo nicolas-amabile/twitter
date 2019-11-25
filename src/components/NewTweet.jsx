@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTweet } from '../actions';
+import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
+
+const MAX_CHARS = 60; // TODO: Implement max for input
 
 export class NewTweet extends Component {
   state = { text: '' }
 
-  addTweet() {
+  publishTweet() {
     const { addTweet } = this.props;
     const { text } = this.state;
     addTweet(text);
@@ -29,7 +31,7 @@ export class NewTweet extends Component {
           className="new-tweet-button"
           type="button"
           data-testid="new-tweet-button"
-          onClick={this.addTweet}
+          onClick={this.publishTweet}
         >
           Tweet
         </button>
@@ -40,10 +42,11 @@ export class NewTweet extends Component {
 
 NewTweet.propTypes = {
   user: PropTypes.object.isRequired,
+  addTweet: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ user }) => ({
   user,
 });
 
-export default connect(mapStateToProps, { addTweet })(NewTweet);
+export default connect(mapStateToProps, { addTweet: addTweetAction })(NewTweet);
