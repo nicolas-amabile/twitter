@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import isEmpty from 'lodash/isEmpty';
 import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
 
@@ -18,6 +19,9 @@ export class NewTweet extends Component {
 
   render() {
     const { user } = this.props;
+    if (!user || isEmpty(user)) {
+      return null;
+    }
     return (
       <div className="new-tweet">
         <Avatar src={user.avatar} />

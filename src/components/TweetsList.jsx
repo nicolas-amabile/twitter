@@ -17,17 +17,23 @@ class TweetsList extends Component {
   }
 
   render() {
+    const { user, contacts } = this.props;
     // TODO: Get the full user object given the tweet.userId
     return (
       <div className="tweets-container">
-        {this.state.tweets.map(tweet => <Tweet {...tweet} />)}
+        {this.state.tweets.map(tweet => {
+          const tweetUser = [...contacts, user].find(contact => contact.id === tweet.userId); // Get the full user object given the tweet.userId
+          return <Tweet {...tweet} user={tweetUser} currentUser={user} />;
+        })}
       </div>
     );
   }
 }
 
 TweetsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
   tweets: PropTypes.array.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 export default TweetsList;

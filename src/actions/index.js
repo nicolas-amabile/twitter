@@ -1,8 +1,8 @@
 import * as types from '../constants';
-import contacts from '../assets/contacts.json';
+import contacts from '../assets/contacts';
 import trends from '../assets/trends.json';
 import tweets from '../assets/tweets.json';
-import user from '../assets/user.json';
+import user from '../assets/user';
 
 export const getContacts = () => ({ type: types.GET_CONTACTS, payload: contacts });
 export const getTrends = () => ({ type: types.GET_TRENDS, payload: trends });

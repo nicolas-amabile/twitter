@@ -8,8 +8,10 @@ const Contact = ({ contact, followContact, unfollowContact }) => {
   return (
     <div className="contact">
       <Avatar src={contact.avatar} />
-      <span>{contact.name}</span>
-      <span>{contact.nickname}</span>
+      <div className="contact-info-container">
+        <span className="contact-name">{contact.name}</span>
+        <span className="contact-nickname">{`@${contact.nickname}`}</span>
+      </div>
       <FollowButton
         isFollowing={isFollowing}
         onClick={() => {
