@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Trends = ({ trends }) => (
   <div>
-    <h1>Trends for you</h1>
-    {trends.map(item => <span>{item}</span>)}
+    <h3>Trends for you</h3>
+    {(trends || []).map(item => <span>{item}</span>)}
   </div>
 );
 

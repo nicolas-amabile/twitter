@@ -1,22 +1,62 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
+.main-content, .menu-container, .side-bar-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-items-container, .side-bar-items-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  padding: 50px;
 }
 
-.App-link {
-  color: #09d3ac;
+.menu-item {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.avatar {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.tweets-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: flex-start;
+  align-items: flex-start;
+  border-radius: 5px;
+  border: 1px solid gray;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.tweet-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tweet-action {
+  cursor: pointer;
+  margin-right: 10px;
 }

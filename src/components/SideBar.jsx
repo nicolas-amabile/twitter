@@ -4,10 +4,12 @@ import Trends from './Trends';
 import SuggestedContacts from './SuggestedContacts';
 
 const SideBar = () => (
-  <div>
-    <SearchBox />
-    <Trends />
-    <SuggestedContacts />
+  <div className="side-bar-container">
+    <div className="side-bar-items-container">
+      <SearchBox />
+      <Trends />
+      <SuggestedContacts />
+    </div>
   </div>
 );
 

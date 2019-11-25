@@ -1,0 +1,56 @@
+[
+  {
+    "id": "2",
+    "avatar": "girl-0.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "3",
+    "avatar": "hippie-0.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "4",
+    "avatar": "man-1.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "5",
+    "avatar": "man-2.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "6",
+    "avatar": "woman-0.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "7",
+    "avatar": "woman-1.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "8",
+    "avatar": "woman-2.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "9",
+    "avatar": "woman-3.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  },
+  {
+    "id": "10",
+    "avatar": "woman-4.png",
+    "name": "NameHere",
+    "nickname": "nicknameHere"
+  }
+]

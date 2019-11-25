@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Contact from './Contact';
 
-const SuggestedContacts = ({ contacts }) => (
+const SuggestedUsers = ({ contacts }) => (
   <div>
-    {contacts.map(contact => <Contact {...contact} />)}
+    <h3>Who to follow</h3>
+    {(contacts || []).map(contact => <Contact {...contact} />)}
   </div>
 );
 
-SuggestedContacts.propTypes = {
+SuggestedUsers.propTypes = {
   contacts: PropTypes.array.isRequired,
 };
 
-export default SuggestedContacts;
+export default SuggestedUsers;

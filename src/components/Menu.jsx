@@ -10,13 +10,9 @@ const ITEMS = [
 ];
 
 const MenuItem = ({ name, icon }) => (
-  <div>
-    <span>
-      {name}
-    </span>
-    <span>
-      {icon}
-    </span>
+  <div className="menu-item">
+    <span> {icon} </span>
+    <span> {name} </span>
   </div>
 );
 
@@ -26,8 +22,10 @@ MenuItem.propTypes = {
 };
 
 const Menu = () => (
-  <div>
-    {ITEMS.map(({ name, icon }) => <MenuItem name={name} icon={icon} />)}
+  <div className="menu-container">
+    <div className="menu-items-container">
+      {ITEMS.map(({ name, icon }) => <MenuItem name={name} icon={icon} />)}
+    </div>
   </div>
 );
 
