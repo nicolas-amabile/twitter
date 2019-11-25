@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addTweet } from '../actions';
 import Avatar from './Avatar';
 
-class NewTweet extends Component {
+export class NewTweet extends Component {
   state = { text: '' }
 
   addTweet() {
@@ -19,8 +19,20 @@ class NewTweet extends Component {
     return (
       <div className="new-tweet">
         <Avatar src={user.avatar} />
-        <input className="new-tweet-input" placeholder="What's happening?" onChange={text => this.setState({ text })} />
-        <button className="new-tweet-button" type="button" onClick={this.addTweet}> Tweet </button>
+        <input
+          className="new-tweet-input"
+          placeholder="What's happening?"
+          data-testid="new-tweet-input"
+          onChange={text => this.setState({ text })}
+        />
+        <button
+          className="new-tweet-button"
+          type="button"
+          data-testid="new-tweet-button"
+          onClick={this.addTweet}
+        >
+          Tweet
+        </button>
       </div>
     );
   }
