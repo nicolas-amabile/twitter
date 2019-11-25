@@ -76,6 +76,7 @@
 
 .new-tweet-input {
   flex: 1;
+  margin: 0 10px;
 }
 
 .new-tweet-button {
