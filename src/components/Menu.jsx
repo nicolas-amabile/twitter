@@ -24,7 +24,7 @@ MenuItem.propTypes = {
 const Menu = () => (
   <div className="menu-container">
     <div className="menu-items-container">
-      {ITEMS.map(({ name, icon }) => <MenuItem name={name} icon={icon} />)}
+      {ITEMS.map(({ name, icon }) => <MenuItem key={name} name={name} icon={icon} />)}
     </div>
   </div>
 );

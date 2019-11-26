@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
+import moment from 'moment';
 import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
 
@@ -11,10 +12,15 @@ export class NewTweet extends Component {
   state = { text: '' }
 
   publishTweet() {
-    const { addTweet } = this.props;
+    const { user, addTweet } = this.props;
     const { text } = this.state;
-    addTweet(text);
-    this.setState({ text: '' });
+    addTweet({
+      content: text,
+      userId: user.id,
+      likes: [],
+      date: moment().format(),
+      retweets: 0,
+    });
   }
 
   render() {
@@ -29,7 +35,7 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
-          onChange={text => this.setState({ text })}
+          onChange={({ target: { value } }) => this.setState({ text: value })}
         />
         <button
           className="new-tweet-button"

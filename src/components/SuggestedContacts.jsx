@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import Contact from './Contact';
 
 const SuggestedContacts = ({ contacts }) => (
-  <div>
+  <div className="suggested-contacts-container">
     <h3>Who to follow</h3>
-    {(contacts || []).map(contact => <Contact contact={contact} />)}
+    {(contacts || []).map(contact => <Contact key={`contact-${contact.id}`} contact={contact} />)}
   </div>
 );
 

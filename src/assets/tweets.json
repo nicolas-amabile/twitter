@@ -3,7 +3,7 @@
     "id": "1",
     "userId": "1",
     "content": "Woohoo!",
-    "date": "",
+    "date": "2019-11-20T21:02:22-03:00",
     "likes": [
       { "userId": "2" },
       { "userId": "3" }
@@ -14,7 +14,7 @@
     "id": "2",
     "userId": "2",
     "content": "Woohoo!",
-    "date": "",
+    "date": "2019-11-22T21:02:22-03:00",
     "likes": [
       { "userId": "2" },
       { "userId": "3" }
@@ -25,7 +25,7 @@
     "id": "3",
     "userId": "1",
     "content": "Woohoo!",
-    "date": "",
+    "date": "2019-11-25T21:02:22-03:00",
     "likes": [
       { "userId": "2" },
       { "userId": "3" }
@@ -36,7 +36,7 @@
     "id": "4",
     "userId": "4",
     "content": "Woohoo!",
-    "date": "",
+    "date": "2019-11-26T21:02:22-03:00",
     "likes": [
       { "userId": "2" },
       { "userId": "3" }
@@ -47,7 +47,7 @@
     "id": "5",
     "userId": "5",
     "content": "Woohoo!",
-    "date": "",
+    "date": "2019-11-30T21:02:22-03:00",
     "likes": [
       { "userId": "2" },
       { "userId": "3" }

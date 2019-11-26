@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTweets, getUser, getContacts } from './actions';
+import { getTweets, getUser, getContacts, getTrends } from './actions';
 import Menu from './components/Menu';
 import NewTweet from './components/NewTweet';
 import TweetsList from './components/TweetsList';
@@ -12,6 +12,7 @@ class App extends Component {
     this.props.getTweets();
     this.props.getUser();
     this.props.getContacts();
+    this.props.getTrends();
   }
 
   render() {
@@ -38,4 +39,9 @@ const mapStateToProps = store => ({
   contacts: store.contacts,
 });
 
-export default connect(mapStateToProps, { getTweets, getUser, getContacts })(App);
+export default connect(mapStateToProps, {
+  getTweets,
+  getUser,
+  getContacts,
+  getTrends,
+})(App);

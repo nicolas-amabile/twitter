@@ -88,8 +88,17 @@
   align-items: center;
 }
 
-.tweet-section > h5 {
+.tweet-info-container > h5, h6 {
   margin-right: 5px;
+}
+
+.tweet-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet-date {
+  color: lightslategray;
 }
 
 .tweet-action {
@@ -124,4 +133,17 @@
   height: 20px;
   padding: 0 10px;
   cursor: pointer;
+  flex: 1;
+  margin-left: auto;
+  max-width: 80px;
+}
+
+.trends-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.trends-container > h3, .suggested-contacts-container > h3 {
+  border-bottom: 1px solid lightgray;
 }
