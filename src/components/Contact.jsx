@@ -24,7 +24,7 @@ const Contact = ({ contact, followContact, unfollowContact }) => {
 
 Contact.propTypes = {
   contact: PropTypes.shape({
-    avatar: PropTypes.string,
+    avatar: PropTypes.object,
     name: PropTypes.string,
     nickname: PropTypes.string,
   }).isRequired,

@@ -1,5 +1,660 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Twitter renders without crashing 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="menu-container"
+    >
+      <div
+        class="menu-items-container"
+      >
+        <div
+          class="menu-item"
+        >
+          <span>
+             
+            🏠
+             
+          </span>
+          <span>
+             
+            Home
+             
+          </span>
+        </div>
+        <div
+          class="menu-item"
+        >
+          <span>
+             
+            #️⃣
+             
+          </span>
+          <span>
+             
+            Explore
+             
+          </span>
+        </div>
+        <div
+          class="menu-item"
+        >
+          <span>
+             
+            🔔
+             
+          </span>
+          <span>
+             
+            Notifications
+             
+          </span>
+        </div>
+        <div
+          class="menu-item"
+        >
+          <span>
+             
+            ✉️
+             
+          </span>
+          <span>
+             
+            Messages
+             
+          </span>
+        </div>
+        <div
+          class="menu-item"
+        >
+          <span>
+             
+            🙍‍♂️
+             
+          </span>
+          <span>
+             
+            Profile
+             
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="main-content"
+    >
+      <div
+        class="new-tweet"
+      >
+        <img
+          alt="avatar"
+          class="avatar"
+          src="[object Object]"
+        />
+        <input
+          class="new-tweet-input"
+          data-testid="new-tweet-input"
+          placeholder="What's happening?"
+        />
+        <button
+          class="new-tweet-button"
+          data-testid="new-tweet-button"
+          type="button"
+        >
+          Tweet
+        </button>
+      </div>
+      <div
+        class="tweets-container"
+      >
+        <div
+          class="tweet"
+        >
+          <div
+            class="tweet-section"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="tweet-info-container"
+            >
+              <h5>
+                Me
+              </h5>
+              <h6>
+                @me
+              </h6>
+              <h6
+                class="tweet-date"
+              >
+                Nov 20
+              </h6>
+            </div>
+          </div>
+          <div
+            class="tweet-section"
+          >
+            Woohoo!
+          </div>
+          <div
+            class="tweet-section"
+          >
+            <span
+              class="tweet-action"
+            >
+              💙
+              2
+            </span>
+            <span
+              class="tweet-action"
+            >
+              🔃
+              0
+            </span>
+          </div>
+        </div>
+        <div
+          class="tweet"
+        >
+          <div
+            class="tweet-section"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="tweet-info-container"
+            >
+              <h5>
+                Adelia Phil
+              </h5>
+              <h6>
+                @adeliaPh
+              </h6>
+              <h6
+                class="tweet-date"
+              >
+                Nov 22
+              </h6>
+            </div>
+          </div>
+          <div
+            class="tweet-section"
+          >
+            Woohoo!
+          </div>
+          <div
+            class="tweet-section"
+          >
+            <span
+              class="tweet-action"
+            >
+              💙
+              2
+            </span>
+            <span
+              class="tweet-action"
+            >
+              🔃
+              3
+            </span>
+          </div>
+        </div>
+        <div
+          class="tweet"
+        >
+          <div
+            class="tweet-section"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="tweet-info-container"
+            >
+              <h5>
+                Me
+              </h5>
+              <h6>
+                @me
+              </h6>
+              <h6
+                class="tweet-date"
+              >
+                Nov 25
+              </h6>
+            </div>
+          </div>
+          <div
+            class="tweet-section"
+          >
+            Woohoo!
+          </div>
+          <div
+            class="tweet-section"
+          >
+            <span
+              class="tweet-action"
+            >
+              💙
+              2
+            </span>
+            <span
+              class="tweet-action"
+            >
+              🔃
+              4
+            </span>
+          </div>
+        </div>
+        <div
+          class="tweet"
+        >
+          <div
+            class="tweet-section"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="tweet-info-container"
+            >
+              <h5>
+                Gideon Conor
+              </h5>
+              <h6>
+                @conor
+              </h6>
+              <h6
+                class="tweet-date"
+              >
+                Nov 26
+              </h6>
+            </div>
+          </div>
+          <div
+            class="tweet-section"
+          >
+            Woohoo!
+          </div>
+          <div
+            class="tweet-section"
+          >
+            <span
+              class="tweet-action"
+            >
+              💙
+              2
+            </span>
+            <span
+              class="tweet-action"
+            >
+              🔃
+              2
+            </span>
+          </div>
+        </div>
+        <div
+          class="tweet"
+        >
+          <div
+            class="tweet-section"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="tweet-info-container"
+            >
+              <h5>
+                Delbert Jackson
+              </h5>
+              <h6>
+                @dJackson
+              </h6>
+              <h6
+                class="tweet-date"
+              >
+                Nov 30
+              </h6>
+            </div>
+          </div>
+          <div
+            class="tweet-section"
+          >
+            Woohoo!
+          </div>
+          <div
+            class="tweet-section"
+          >
+            <span
+              class="tweet-action"
+            >
+              💙
+              2
+            </span>
+            <span
+              class="tweet-action"
+            >
+              🔃
+              1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="side-bar-container"
+    >
+      <div
+        class="side-bar-items-container"
+      >
+        <div>
+          <span
+            aria-label="search icon"
+            role="img"
+          >
+            🔎
+          </span>
+          <input
+            placeholder="Search"
+          />
+        </div>
+        <div
+          class="trends-container"
+        >
+          <h3>
+            Trends for you
+          </h3>
+        </div>
+        <div
+          class="suggested-contacts-container"
+        >
+          <h3>
+            Who to follow
+          </h3>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Adelia Phil
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @adeliaPh
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Joseph Jaime
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @joseph_j
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Gideon Conor
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @conor
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Delbert Jackson
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @dJackson
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Ashley Walker
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @ashley_01
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Mindy Esmé
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @mindy_esme
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Alexa Norah
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @__alexa__
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Vicki Eileen
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @v_eileen
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+          <div
+            class="contact"
+          >
+            <img
+              alt="avatar"
+              class="avatar"
+              src="[object Object]"
+            />
+            <div
+              class="contact-info-container"
+            >
+              <span
+                class="contact-name"
+              >
+                Roxana Leland
+              </span>
+              <span
+                class="contact-nickname"
+              >
+                @roxLelan
+              </span>
+            </div>
+            <button
+              class="follow-button"
+              type="button"
+            >
+              FOLLOW
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders without crashing 1`] = `
 <div>
   <div

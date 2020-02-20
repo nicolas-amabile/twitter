@@ -1,8 +1,14 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import { renderWithRedux } from './utils';
 
-it('renders without crashing', () => {
-  const { container } = render(<App />);
-  expect(container).toMatchSnapshot();
+describe('Twitter', () => {
+  it('renders without crashing', () => {
+    const { container } = renderWithRedux(<App />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('posts a tweet correctly', () => {
+    // TODO
+  });
 });
