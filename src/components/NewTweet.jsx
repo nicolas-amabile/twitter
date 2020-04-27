@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import isEmpty from 'lodash/isEmpty';
-import moment from 'moment';
 import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
+import { isEmpty } from '../utils';
 
-const MAX_CHARS = 60; // TODO: Implement max for input
+// const MAX_CHARS = 60; // TODO: Implement max for input
 
 export class NewTweet extends Component {
   state = { text: '' }
@@ -18,7 +17,7 @@ export class NewTweet extends Component {
       content: text,
       userId: user.id,
       likes: [],
-      date: moment().format(),
+      date: new Date(),
       retweets: 0,
     });
   }

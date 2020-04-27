@@ -1,8 +1,8 @@
 import {
   GET_TWEETS,
   ADD_TWEET,
-  ADD_COMMENT,
-  LIKE_TWEET
+  // ADD_COMMENT,
+  LIKE_TWEET,
 } from '../constants';
 
 export default function tweets(state = [], action) {
@@ -12,7 +12,7 @@ export default function tweets(state = [], action) {
     case ADD_TWEET:
       return [...state, action.payload];
     case LIKE_TWEET:
-      // TODO: 
+      // TODO:
       return state;
     default:
       return state;
