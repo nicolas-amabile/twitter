@@ -8,7 +8,12 @@ import { isEmpty } from '../utils';
 // const MAX_CHARS = 60; // TODO: Implement max for input
 
 export class NewTweet extends Component {
-  state = { text: '' }
+  constructor(props) {
+    super(props);
+    this.state = { text: "" };
+    this.publishTweet = this.publishTweet.bind(this);
+    this.newTweetInput = React.createRef();
+  }
 
   publishTweet() {
     const { user, addTweet } = this.props;
