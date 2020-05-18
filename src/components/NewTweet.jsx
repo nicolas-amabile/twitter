@@ -26,9 +26,7 @@ export class NewTweet extends Component {
       retweets: 0,
     });
 
-    this.setState({
-      text: ''
-    });
+    this.setState(initialState);
   }
 
   render() {
