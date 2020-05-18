@@ -14,10 +14,17 @@ class TweetsList extends Component {
     if (this.state.tweets.length !== nextProps.tweets.length) {
       this.state.tweets = nextProps.tweets;
     }
-  }
+  }  
 
   render() {
-    const { user, contacts } = this.props;
+    const { user, contacts, tweets } = this.props;
+
+    tweets.sort((a, b) => {
+      let c = new Date(a.date);
+      let d = new Date(b.date);
+      return d-c;
+    });
+
     return (
       <div className="tweets-container">
         {this.state.tweets.map(tweet => {
