@@ -17,4 +17,9 @@ export function renderWithRedux(
   };
 }
 
+
+export const sortByDateDescending = (a, b)  => {
+  return new Date(b.date).getTime() - new Date(a.date).getTime()
+}
+
 export const isEmpty = obj => Object.keys(obj).length === 0;

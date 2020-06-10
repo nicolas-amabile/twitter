@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTweets, getUser, getContacts } from './actions';
+import { getTweets, getUser, getContacts, getTrends } from './actions';
 import Menu from './components/Menu';
 import NewTweet from './components/NewTweet';
 import TweetsList from './components/TweetsList';
@@ -12,6 +12,7 @@ class App extends Component {
     this.props.getTweets();
     this.props.getUser();
     this.props.getContacts();
+    this.props.getTrends()
   }
 
   render() {
@@ -26,7 +27,7 @@ class App extends Component {
             user={this.props.user}
           />
         </div>
-        <SideBar />
+        <SideBar  />
       </div>
     );
   }
@@ -35,11 +36,12 @@ class App extends Component {
 const mapStateToProps = store => ({
   user: store.user,
   tweets: store.tweets,
-  contacts: store.contacts,
+  contacts: store.contacts
 });
 
 export default connect(mapStateToProps, {
   getTweets,
   getUser,
   getContacts,
+  getTrends
 })(App);
