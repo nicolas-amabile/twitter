@@ -8,6 +8,12 @@ import { isEmpty } from '../utils';
 // const MAX_CHARS = 60; // TODO: Implement max for input
 
 export class NewTweet extends Component {
+  constructor(props) {
+    super(props);
+
+    this.publishTweet = this.publishTweet.bind(this);
+  }
+
   state = { text: '' }
 
   publishTweet() {
@@ -20,10 +26,16 @@ export class NewTweet extends Component {
       date: new Date(),
       retweets: 0,
     });
+
+    // clean text state here?
+    this.setState({
+      text: '',
+    });
   }
 
   render() {
     const { user } = this.props;
+    const { text } = this.state;
     if (!user || isEmpty(user)) {
       return null;
     }
@@ -34,6 +46,7 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
+          value={text}
           onChange={({ target: { value } }) => this.setState({ text: value })}
         />
         <button
