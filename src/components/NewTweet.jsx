@@ -26,10 +26,16 @@ export class NewTweet extends Component {
       date: new Date(),
       retweets: 0,
     });
+
+    // clean text state here?
+    this.setState({
+      text: '',
+    });
   }
 
   render() {
     const { user } = this.props;
+    const { text } = this.state;
     if (!user || isEmpty(user)) {
       return null;
     }
@@ -40,6 +46,7 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
+          value={text}
           onChange={({ target: { value } }) => this.setState({ text: value })}
         />
         <button
