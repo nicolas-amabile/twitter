@@ -6,18 +6,27 @@ class TweetsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tweets: props.tweets || [],
+      tweets: this.sortTweets(props.tweets) || [],
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.state.tweets.length !== nextProps.tweets.length) {
-      this.state.tweets = nextProps.tweets;
+      this.state.tweets = this.sortTweets(nextProps.tweets);
     }
+  }
+
+  sortTweets = (tweets) => {
+   return tweets.slice().sort((a, b) => {
+      const aDate = new Date(a.date);
+      const bDate = new Date(b.date);
+      return bDate - aDate;
+    });
   }
 
   render() {
     const { user, contacts } = this.props;
+
     return (
       <div className="tweets-container">
         {this.state.tweets.map(tweet => {
