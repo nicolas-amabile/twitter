@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from './Avatar';
+import { addTweet as addTweetAction } from '../actions';
+import { connect } from 'react-redux';
 
 const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
@@ -11,9 +13,22 @@ const Tweet = ({
   date,
   likes,
   retweets,
+  addTweet
 }) => {
   const dateObject = new Date(date);
   const formattedDate = `${months[dateObject.getMonth()]} ${dateObject.getDate()}`;
+
+  const retweet = () => {
+    addTweet({
+      content,
+      userId: user.id,
+      likes: [],
+      date: new Date(),
+      retweets: 0,
+      retweetedBy: user.name
+    });
+  };
+
   return (
     <div className="tweet">
       {!!retweetedBy && <div className="tweet-header"> {`🔃 ${retweetedBy} Retweeted`} </div>}
@@ -47,6 +62,7 @@ const Tweet = ({
             /**
              * Add a new tweet with the same content + `🔃 ${currentUser.name} Retweeted`
              */
+            retweet();
           }}
         >
           🔃{retweets}
@@ -64,10 +80,11 @@ Tweet.propTypes = {
   date: PropTypes.string.isRequired,
   likes: PropTypes.array.isRequired,
   retweets: PropTypes.number.isRequired,
+  addTweet: PropTypes.func.isRequired,
 };
 
 Tweet.defaultProps = {
   retweetedBy: null,
 };
 
-export default Tweet;
+export default connect(null, { addTweet: addTweetAction })(Tweet);
