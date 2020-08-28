@@ -1,16 +1,18 @@
-import React from 'react';
-import SearchBox from './SearchBox';
-import Trends from './Trends';
-import SuggestedContacts from './SuggestedContacts';
+import React from 'react'
+import SearchBox from './SearchBox'
+import Trends from './Trends'
+import SuggestedContacts from './SuggestedContacts'
 
-const SideBar = () => (
-  <div className="side-bar-container">
-    <div className="side-bar-items-container">
-      <SearchBox />
-      <Trends />
-      <SuggestedContacts />
+const SideBar = () => {
+  return (
+    <div className='side-bar-container'>
+      <div className='side-bar-items-container'>
+        <SearchBox />
+        <Trends />
+        <SuggestedContacts />
+      </div>
     </div>
-  </div>
-);
+  )
+}
 
-export default SideBar;
+export default SideBar
