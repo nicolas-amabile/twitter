@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Avatar from './Avatar';
+import { addTweet as addTweetAction, increaseRetweetCount } from '../actions';
 
 const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
@@ -11,6 +13,10 @@ const Tweet = ({
   date,
   likes,
   retweets,
+  addTweet,
+  increaseRetweets,
+  currentUser,
+  id,
 }) => {
   const dateObject = new Date(date);
   const formattedDate = `${months[dateObject.getMonth()]} ${dateObject.getDate()}`;
@@ -47,6 +53,16 @@ const Tweet = ({
             /**
              * Add a new tweet with the same content + `🔃 ${currentUser.name} Retweeted`
              */
+            increaseRetweets({ id });
+            addTweet({
+              id,
+              content: `${content} ${currentUser.name} Retweeted`,
+              userId: user.id,
+              likes,
+              retweets,
+              date,
+              retweetedBy: currentUser.name,
+            });
           }}
         >
           🔃{retweets}
@@ -57,17 +73,24 @@ const Tweet = ({
 };
 
 Tweet.propTypes = {
-  // currentUser: PropTypes.object.isRequired,
+  currentUser: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
   retweetedBy: PropTypes.object,
   content: PropTypes.any.isRequired,
   date: PropTypes.string.isRequired,
   likes: PropTypes.array.isRequired,
   retweets: PropTypes.number.isRequired,
+  addTweet: PropTypes.func.isRequired,
+  increaseRetweets: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 Tweet.defaultProps = {
   retweetedBy: null,
 };
 
-export default Tweet;
+
+export default connect(null, {
+  addTweet: addTweetAction,
+  increaseRetweets: increaseRetweetCount,
+})(Tweet);
