@@ -1,7 +1,9 @@
 module.exports = [
   {
     id: '2',
-    avatar: require('./avatars/girl-0.png'),
+    avatar: {
+      url: require('./avatars/girl-0.png'),
+    },
     name: 'Adelia Phil',
     nickname: 'adeliaPh',
   },

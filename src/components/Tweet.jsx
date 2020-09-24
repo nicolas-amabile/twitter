@@ -13,7 +13,11 @@ const Tweet = ({
   retweets,
 }) => {
   const dateObject = new Date(date);
-  const formattedDate = `${months[dateObject.getMonth()]} ${dateObject.getDate()}`;
+  const currentDate = new Date();
+  let formattedDate = '';
+  if (currentDate.getDay() === dateObject.getDay()) formattedDate = 'Today';
+  else formattedDate = `${dateObject.getDate()} ${months[dateObject.getMonth()]}`;
+  debugger;
   return (
     <div className="tweet">
       {!!retweetedBy && <div className="tweet-header"> {`🔃 ${retweetedBy} Retweeted`} </div>}
@@ -22,7 +26,7 @@ const Tweet = ({
         <div className="tweet-info-container">
           <h5>{user.name}</h5>
           <h6>{`@${user.nickname}`}</h6>
-          <h6 className="tweet-date">{formattedDate}</h6>
+          <h6 className="tweet-date">{formattedDate.toString()}</h6>
         </div>
       </div>
       <div className="tweet-section">
