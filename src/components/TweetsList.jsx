@@ -5,6 +5,9 @@ import Tweet from './Tweet';
 class TweetsList extends Component {
   constructor(props) {
     super(props);
+    // console.log('props.tweets: ', props.tweets)
+    
+    // console.log('newTweetsList: ', newTweetsList)
     this.state = {
       tweets: props.tweets || [],
     };
@@ -12,7 +15,8 @@ class TweetsList extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.state.tweets.length !== nextProps.tweets.length) {
-      this.state.tweets = nextProps.tweets;
+      const newTweetsList = nextProps.tweets.sort(function(a,b){ return new Date(b.date) - new Date(a.date); })
+      this.state.tweets = newTweetsList;
     }
   }
 
