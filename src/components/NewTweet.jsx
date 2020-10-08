@@ -7,7 +7,7 @@ import { isEmpty } from '../utils';
 // const MAX_CHARS = 60; // TODO: Implement max for input
 
 function NewTweet() {
-  const [ text, setText ] = useState(null);
+  const [ text, setText ] = useState('');
   const user = useSelector(state => state.user)
   const dispatch = useDispatch();
 
@@ -23,6 +23,7 @@ function NewTweet() {
       date: new Date(),
       retweets: 0,
     }));
+      setText('')
   }
 
     if (!user || isEmpty(user)) {
@@ -37,6 +38,7 @@ function NewTweet() {
               placeholder="What's happening?"
               data-testid="new-tweet-input"
               onChange={handleOnchange}
+              value={text}
           />
           <button
               className="new-tweet-button"
