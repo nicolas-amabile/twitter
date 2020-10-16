@@ -15,11 +15,13 @@ class App extends Component {
   }
 
   render() {
+    const { user, tweets } = this.props;
+
     return (
       <div className="App">
         <Menu />
         <div className='main-content'>
-          <NewTweet />
+          <NewTweet  user ={user} addTweet ={tweets} />
           <TweetsList
             tweets={this.props.tweets}
             contacts={this.props.contacts}
