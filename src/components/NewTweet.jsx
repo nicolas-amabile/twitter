@@ -5,10 +5,23 @@ import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
 import { isEmpty } from '../utils';
 
-// const MAX_CHARS = 60; // TODO: Implement max for input
+const MAX_CHARS = 60;
 
 export class NewTweet extends Component {
-  state = { text: '' }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: '',
+      addTweetButtonDisabled: true,
+    };
+    this.onTweetInputChange = this.onTweetInputChange.bind(this);
+    this.getMaxCharsAllowed = this.getMaxCharsAllowed.bind(this);
+  }
+
+  getMaxCharsAllowed() {
+    return this.props.maxChars ? this.props.maxChars : MAX_CHARS;
+  }
 
   publishTweet() {
     const { user, addTweet } = this.props;
@@ -20,6 +33,15 @@ export class NewTweet extends Component {
       date: new Date(),
       retweets: 0,
     });
+  }
+
+  onTweetInputChange(event) {
+    
+    const { value: text } = event.target;
+
+    const addTweetButtonDisabled = text.length === 0 || text.length > this.getMaxCharsAllowed();
+
+    this.setState({ text, addTweetButtonDisabled });
   }
 
   render() {
@@ -34,13 +56,15 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
-          onChange={({ target: { value } }) => this.setState({ text: value })}
+          onChange={this.onTweetInputChange}
         />
         <button
           className="new-tweet-button"
           type="button"
           data-testid="new-tweet-button"
           onClick={this.publishTweet}
+          disabled={this.state.addTweetButtonDisabled}
+          title={this.state.addTweetButtonDisabled ? `You need at least one character to proceed` : ''}
         >
           Tweet
         </button>
