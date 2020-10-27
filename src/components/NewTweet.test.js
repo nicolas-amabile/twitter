@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, within } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { NewTweet } from './NewTweet';
 
 const user = {
@@ -19,9 +19,9 @@ describe('New tweet', () => {
   });
   
   test('Enforce max length for tweet by using the maxChars prop to 30 chars', () => {
-    const { container, getByTestId } = render(<NewTweet maxChars={30} user={user} addTweet={addTweet} />);
+    const { getByTestId } = render(<NewTweet maxChars={30} user={user} addTweet={addTweet} />);
     
-    const input = within(container).getByTestId('new-tweet-input');
+    const input = getByTestId('new-tweet-input');
     const button = getByTestId('new-tweet-button');
 
     fireEvent.change(input, { target: {value: 'This is my first tweet with more than 30 chars'}});
@@ -36,9 +36,9 @@ describe('New tweet', () => {
 
   test("Enforce max length for tweet, using default value", () => {
 
-    const { container, getByTestId } = render(<NewTweet user={user} addTweet={addTweet} />);
+    const { getByTestId } = render(<NewTweet user={user} addTweet={addTweet} />);
     
-    const input = within(container).getByTestId('new-tweet-input');
+    const input = getByTestId('new-tweet-input');
 
     const button = getByTestId('new-tweet-button');
 
