@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Avatar from "./Avatar";
-import FollowButton from "./FollowButton";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Avatar from './Avatar';
+import FollowButton from './FollowButton';
 
 const Contact = ({ contact, followContact }) => {
   const isFollowing = followContact; // TODO: Check if the user is following contact

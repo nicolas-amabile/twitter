@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { getTweets, getUser, getContacts, getTrends } from "./actions";
-import Menu from "./components/Menu";
-import NewTweet from "./components/NewTweet";
-import TweetsList from "./components/TweetsList";
-import SideBar from "./components/SideBar";
-import "./App.css";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getTweets, getUser, getContacts, getTrends } from './actions';
+import Menu from './components/Menu';
+import NewTweet from './components/NewTweet';
+import TweetsList from './components/TweetsList';
+import SideBar from './components/SideBar';
+import './App.css';
 
 class App extends Component {
   componentDidMount() {

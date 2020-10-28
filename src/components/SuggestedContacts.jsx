@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import Contact from "./Contact";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Contact from './Contact';
 
 const SuggestedContacts = ({ contacts, user }) => (
   <div className="suggested-contacts-container">

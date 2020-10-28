@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const FollowButton = ({ onClick, isFollowing }) => (
   <button onClick={onClick} className="follow-button" type="button">
-    {isFollowing ? "UNFOLLOW" : "FOLLOW"}
+    {isFollowing ? 'UNFOLLOW' : 'FOLLOW'}
   </button>
 );
 
