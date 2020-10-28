@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getTweets, getUser, getContacts } from './actions';
-import Menu from './components/Menu';
-import NewTweet from './components/NewTweet';
-import TweetsList from './components/TweetsList';
-import SideBar from './components/SideBar';
-import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getTweets, getUser, getContacts, getTrends } from "./actions";
+import Menu from "./components/Menu";
+import NewTweet from "./components/NewTweet";
+import TweetsList from "./components/TweetsList";
+import SideBar from "./components/SideBar";
+import "./App.css";
 
 class App extends Component {
   componentDidMount() {
     this.props.getTweets();
     this.props.getUser();
     this.props.getContacts();
+    this.props.getTrends();
   }
 
   render() {
     return (
       <div className="App">
         <Menu />
-        <div className='main-content'>
+        <div className="main-content">
           <NewTweet />
           <TweetsList
             tweets={this.props.tweets}
@@ -35,11 +36,12 @@ class App extends Component {
 const mapStateToProps = store => ({
   user: store.user,
   tweets: store.tweets,
-  contacts: store.contacts,
+  contacts: store.contacts
 });
 
 export default connect(mapStateToProps, {
   getTweets,
   getUser,
   getContacts,
+  getTrends
 })(App);
