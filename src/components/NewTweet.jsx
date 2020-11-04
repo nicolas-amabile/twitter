@@ -10,19 +10,21 @@ import { isEmpty } from '../utils';
 export class NewTweet extends Component {
   state = { text: '' }
 
-  publishTweet() {
+  publishTweet = () => {
     const { user, addTweet } = this.props;
     const { text } = this.state;
     addTweet({
       content: text,
       userId: user.id,
       likes: [],
-      date: new Date(),
+      date: new Date().toISOString(),
       retweets: 0,
     });
+    this.setState({ text: '' });
   }
 
   render() {
+    const { text } = this.state;
     const { user } = this.props;
     if (!user || isEmpty(user)) {
       return null;
@@ -35,6 +37,7 @@ export class NewTweet extends Component {
           placeholder="What's happening?"
           data-testid="new-tweet-input"
           onChange={({ target: { value } }) => this.setState({ text: value })}
+          value={text}
         />
         <button
           className="new-tweet-button"
