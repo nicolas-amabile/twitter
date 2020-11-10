@@ -8,9 +8,10 @@ import {
 export default function tweets(state = [], action) {
   switch (action.type) {
     case GET_TWEETS:
-      return action.payload;
+      const sortedTweets = action.payload.sort((a, b) => new Date(a.date) - new Date(b.date))
+      return [...sortedTweets];
     case ADD_TWEET:
-      return [...state, action.payload];
+      return [action.payload, ...state];
     case LIKE_TWEET:
       // TODO:
       return state;

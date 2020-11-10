@@ -1,25 +1,33 @@
 [
   {
-    "id": "1",
-    "userId": "1",
-    "content": "Woohoo!",
-    "date": "2019-11-20T21:02:22-03:00",
-    "likes": [
-      { "userId": "2" },
-      { "userId": "3" }
-    ],
-    "retweets": 0
-  },
-  {
     "id": "2",
     "userId": "2",
     "content": "Woohoo!",
     "date": "2019-11-22T21:02:22-03:00",
     "likes": [
-      { "userId": "2" },
-      { "userId": "3" }
+      {
+        "userId": "2"
+      },
+      {
+        "userId": "3"
+      }
     ],
     "retweets": 3
+  },
+  {
+    "id": "1",
+    "userId": "1",
+    "content": "Woohoo!",
+    "date": "2019-11-20T21:02:22-03:00",
+    "likes": [
+      {
+        "userId": "2"
+      },
+      {
+        "userId": "3"
+      }
+    ],
+    "retweets": 0
   },
   {
     "id": "3",
@@ -27,8 +35,12 @@
     "content": "Woohoo!",
     "date": "2019-11-25T21:02:22-03:00",
     "likes": [
-      { "userId": "2" },
-      { "userId": "3" }
+      {
+        "userId": "2"
+      },
+      {
+        "userId": "3"
+      }
     ],
     "retweets": 4
   },
@@ -38,8 +50,12 @@
     "content": "Woohoo!",
     "date": "2019-11-26T21:02:22-03:00",
     "likes": [
-      { "userId": "2" },
-      { "userId": "3" }
+      {
+        "userId": "2"
+      },
+      {
+        "userId": "3"
+      }
     ],
     "retweets": 2
   },
@@ -49,8 +65,12 @@
     "content": "Woohoo!",
     "date": "2019-11-30T21:02:22-03:00",
     "likes": [
-      { "userId": "2" },
-      { "userId": "3" }
+      {
+        "userId": "2"
+      },
+      {
+        "userId": "3"
+      }
     ],
     "retweets": 1
   }
