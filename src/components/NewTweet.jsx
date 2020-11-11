@@ -9,8 +9,12 @@ import { isEmpty } from '../utils';
 
 export class NewTweet extends Component {
   state = { text: '' }
+  
 
-  publishTweet = () => {
+  handleChange = e => this.setState({ text: e.target.value })
+  
+  publishTweet = (e) => {
+    e.preventDefault()
     const { user, addTweet } = this.props;
     const { text } = this.state;
     addTweet({
@@ -39,7 +43,7 @@ export class NewTweet extends Component {
           placeholder="What's happening?"
           value={text}
           data-testid="new-tweet-input"
-          onChange={({ target: { value } }) => this.setState({ text: value })}
+          onChange={this.handleChange}
         />
         <button
           className="new-tweet-button"
