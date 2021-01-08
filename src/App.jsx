@@ -19,7 +19,9 @@ class App extends Component {
       <div className="App">
         <Menu />
         <div className='main-content'>
-          <NewTweet />
+          <NewTweet
+            user={this.props.user}
+          />
           <TweetsList
             tweets={this.props.tweets}
             contacts={this.props.contacts}
