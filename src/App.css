@@ -5,7 +5,9 @@
   margin-top: 30px;
 }
 
-.main-content, .menu-container, .side-bar-container {
+.main-content,
+.menu-container,
+.side-bar-container {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -15,7 +17,8 @@
   flex-direction: column;
 }
 
-.menu-items-container, .side-bar-items-container {
+.menu-items-container,
+.side-bar-items-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,6 +33,7 @@
 }
 
 .avatar {
+  grid-area: avatar;
   height: 40px;
   width: 40px;
   border-radius: 40%;
@@ -71,15 +75,15 @@
   width: 100%;
   align-content: flex-start;
   align-items: flex-start;
-  border-top: .1px solid lightgray;
-  border-right: .1px solid lightgray;
-  border-left: .1px solid lightgray;
+  border-top: 0.1px solid lightgray;
+  border-right: 0.1px solid lightgray;
+  border-left: 0.1px solid lightgray;
   justify-content: space-evenly;
   padding: 10px;
 }
 
 .tweet:last-of-type {
-  border-bottom: .1px solid lightgray;
+  border-bottom: 0.1px solid lightgray;
 }
 
 .tweet-section {
@@ -88,7 +92,8 @@
   align-items: center;
 }
 
-.tweet-info-container > h5, h6 {
+.tweet-info-container > h5,
+h6 {
   margin-right: 5px;
 }
 
@@ -107,23 +112,45 @@
 }
 
 .new-tweet {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'avatar tweet tweet'
+    '. buttons tweetButton';
   justify-content: space-between;
-  margin: 10px;
+  align-items: center;
+  margin: 10px 0;
+  border: solid 1px #eee;
+  padding: 10px 20px;
 }
 
 .new-tweet-input {
+  grid-area: tweet;
   flex: 1;
-  margin: 0 10px;
+  margin: 0 1px;
+  border: none;
 }
 
 .new-tweet-button {
+  grid-area: tweetButton;
   border-radius: 20px;
   background-color: cornflowerblue;
   color: white;
   height: 30px;
   padding: 0 10px;
   cursor: pointer;
+  border: none;
+}
+
+.buttons {
+  grid-area: buttons;
+  justify-self: start;
+  justify-content: space-around;
+}
+
+.buttons svg {
+  margin-right: 5px;
 }
 
 .follow-button {
@@ -144,6 +171,7 @@
   width: 100%;
 }
 
-.trends-container > h3, .suggested-contacts-container > h3 {
+.trends-container > h3,
+.suggested-contacts-container > h3 {
   border-bottom: 1px solid lightgray;
 }
