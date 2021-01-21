@@ -10,7 +10,8 @@ import { isEmpty } from '../utils';
 export class NewTweet extends Component {
   state = { text: '' }
 
-  publishTweet() {
+  publishTweet(e) {
+    e.preventDefault();
     const { user, addTweet } = this.props;
     const { text } = this.state;
     addTweet({
@@ -20,6 +21,7 @@ export class NewTweet extends Component {
       date: new Date(),
       retweets: 0,
     });
+    this.setState({ text: '' })
   }
 
   render() {
@@ -27,10 +29,12 @@ export class NewTweet extends Component {
     if (!user || isEmpty(user)) {
       return null;
     }
+
     return (
       <div className="new-tweet">
         <Avatar src={user.avatar} />
         <input
+          value={this.state.text}
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
@@ -40,7 +44,7 @@ export class NewTweet extends Component {
           className="new-tweet-button"
           type="button"
           data-testid="new-tweet-button"
-          onClick={this.publishTweet}
+          onClick={e => this.publishTweet(e)}
         >
           Tweet
         </button>

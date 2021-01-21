@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from './Avatar';
-
-const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+import { dateFormat } from '../utils/dateFormat'
 
 const Tweet = ({
   user,
@@ -12,8 +11,6 @@ const Tweet = ({
   likes,
   retweets,
 }) => {
-  const dateObject = new Date(date);
-  const formattedDate = `${months[dateObject.getMonth()]} ${dateObject.getDate()}`;
   return (
     <div className="tweet">
       {!!retweetedBy && <div className="tweet-header"> {`🔃 ${retweetedBy} Retweeted`} </div>}
@@ -22,7 +19,7 @@ const Tweet = ({
         <div className="tweet-info-container">
           <h5>{user.name}</h5>
           <h6>{`@${user.nickname}`}</h6>
-          <h6 className="tweet-date">{formattedDate}</h6>
+          <h6 className="tweet-date">{dateFormat(new Date(date))}</h6>
         </div>
       </div>
       <div className="tweet-section">
