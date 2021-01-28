@@ -6,7 +6,7 @@ import user from '../assets/user';
 
 export const getContacts = () => ({ type: types.GET_CONTACTS, payload: contacts });
 export const getTrends = () => ({ type: types.GET_TRENDS, payload: trends });
-export const getTweets = () => ({ type: types.GET_TWEETS, payload: tweets });
+export const getTweets = () => ({ type: types.GET_TWEETS, payload: tweets.sort((a, b) => new Date(a.date) - new Date(b.date)) });
 export const addTweet = payload => ({ type: types.ADD_TWEET, payload });
 export const likeTweet = payload => ({ type: types.LIKE_TWEET, payload });
 export const getUser = () => ({ type: types.GET_USER, payload: user });
