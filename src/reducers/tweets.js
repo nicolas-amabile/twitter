@@ -3,12 +3,14 @@ import {
   ADD_TWEET,
   // ADD_COMMENT,
   LIKE_TWEET,
+  DESC_ORDER
 } from '../constants';
+import {sortTweetsByDate} from "../utils";
 
 export default function tweets(state = [], action) {
   switch (action.type) {
     case GET_TWEETS:
-      return action.payload;
+      return sortTweetsByDate(action.payload, DESC_ORDER)
     case ADD_TWEET:
       return [...state, action.payload];
     case LIKE_TWEET:
