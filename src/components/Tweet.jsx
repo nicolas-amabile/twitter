@@ -13,7 +13,7 @@ const Tweet = ({
   retweets,
 }) => {
   const dateObject = new Date(date);
-  const formattedDate = `${months[dateObject.getMonth()]} ${dateObject.getDate()}`;
+  const formattedDate = `${months[dateObject.getMonth()]} ${dateObject.getDate()}, ${dateObject.getFullYear()}`;
   return (
     <div className="tweet">
       {!!retweetedBy && <div className="tweet-header"> {`🔃 ${retweetedBy} Retweeted`} </div>}
