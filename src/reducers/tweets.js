@@ -10,7 +10,7 @@ export default function tweets(state = [], action) {
     case GET_TWEETS:
       return action.payload;
     case ADD_TWEET:
-      return [...state, action.payload];
+      return [action.payload, ...state];
     case LIKE_TWEET:
       // TODO:
       return state;
