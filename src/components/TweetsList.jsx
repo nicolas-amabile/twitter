@@ -20,11 +20,12 @@ class TweetsList extends Component {
     const { user, contacts } = this.props;
     return (
       <div className="tweets-container">
-        {this.state.tweets.map(tweet => {
-          // Get the full user object given the tweet.userId
-          const tweetUser = [...contacts, user].find(contact => contact.id === tweet.userId);
-          return <Tweet key={`tweet-${tweet.id}`} {...tweet} user={tweetUser} currentUser={user} />;
-        })}
+        {this.state.tweets.sort((lastTweet, currentTweet) => new Date(currentTweet.date) - new Date(lastTweet.date))
+          .map(tweet => {
+            // Get the full user object given the tweet.userId
+            const tweetUser = [...contacts, user].find(contact => contact.id === tweet.userId);
+            return <Tweet key={`tweet-${tweet.id}`} {...tweet} user={tweetUser} currentUser={user} />;
+          })}
       </div>
     );
   }
