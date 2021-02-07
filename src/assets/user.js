@@ -3,5 +3,5 @@ module.exports = {
   avatar: require('./avatars/man-0.png'),
   name: 'Me',
   nickname: 'me',
-  contacts: ['02', '05', '08'],
+  contacts: ['2', '5', '8']
 };
