@@ -102,6 +102,8 @@ exports[`Twitter renders without crashing 1`] = `
         <button
           class="new-tweet-button"
           data-testid="new-tweet-button"
+          disabled=""
+          title="You need at least one character to proceed"
           type="button"
         >
           Tweet
@@ -133,7 +135,7 @@ exports[`Twitter renders without crashing 1`] = `
               <h6
                 class="tweet-date"
               >
-                Nov 20
+                NOV 20
               </h6>
             </div>
           </div>
@@ -182,7 +184,7 @@ exports[`Twitter renders without crashing 1`] = `
               <h6
                 class="tweet-date"
               >
-                Nov 22
+                NOV 22
               </h6>
             </div>
           </div>
@@ -231,7 +233,7 @@ exports[`Twitter renders without crashing 1`] = `
               <h6
                 class="tweet-date"
               >
-                Nov 25
+                NOV 25
               </h6>
             </div>
           </div>
@@ -280,7 +282,7 @@ exports[`Twitter renders without crashing 1`] = `
               <h6
                 class="tweet-date"
               >
-                Nov 26
+                NOV 26
               </h6>
             </div>
           </div>
@@ -329,7 +331,7 @@ exports[`Twitter renders without crashing 1`] = `
               <h6
                 class="tweet-date"
               >
-                Nov 30
+                NOV 30
               </h6>
             </div>
           </div>
@@ -651,39 +653,6 @@ exports[`Twitter renders without crashing 1`] = `
         </div>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`renders without crashing 1`] = `
-<div>
-  <div
-    class="App"
-  >
-    <header
-      class="App-header"
-    >
-      <img
-        alt="logo"
-        class="App-logo"
-        src="[object Object]"
-      />
-      <p>
-        Edit 
-        <code>
-          src/App.js
-        </code>
-         and save to reload.
-      </p>
-      <a
-        class="App-link"
-        href="https://reactjs.org"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Learn React
-      </a>
-    </header>
   </div>
 </div>
 `;
