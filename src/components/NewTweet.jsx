@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import dayjs from 'dayjs';
 import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
 import { isEmpty } from '../utils';
@@ -10,16 +11,19 @@ import { isEmpty } from '../utils';
 export class NewTweet extends Component {
   state = { text: '' }
 
-  publishTweet() {
+  publishTweet = () => {
     const { user, addTweet } = this.props;
     const { text } = this.state;
+    const date = dayjs().format();
     addTweet({
+      id: Math.random(),
       content: text,
       userId: user.id,
       likes: [],
-      date: new Date(),
+      date,
       retweets: 0,
     });
+    this.setState({ text: '' });
   }
 
   render() {
@@ -34,6 +38,7 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
+          value={this.state.text}
           onChange={({ target: { value } }) => this.setState({ text: value })}
         />
         <button
