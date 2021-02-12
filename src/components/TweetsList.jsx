@@ -12,7 +12,8 @@ class TweetsList extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.state.tweets.length !== nextProps.tweets.length) {
-      this.state.tweets = nextProps.tweets;
+      // this.state.tweets = nextProps.tweets;
+      this.setState({ tweets: nextProps.tweets });
     }
   }
 
