@@ -12,3 +12,4 @@ export const likeTweet = payload => ({ type: types.LIKE_TWEET, payload });
 export const getUser = () => ({ type: types.GET_USER, payload: user });
 export const followUser = payload => ({ type: types.FOLLOW_USER, payload });
 export const unfollowUser = payload => ({ type: types.UNFOLLOW_USER, payload });
+export const increaseRetweetCount = payload => ({ type: types.INCREASE_RETWEET_COUNT, payload });

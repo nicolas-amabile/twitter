@@ -10,7 +10,7 @@ import { isEmpty } from '../utils';
 export class NewTweet extends Component {
   state = { text: '' }
 
-  publishTweet() {
+  publishTweet = () => {
     const { user, addTweet } = this.props;
     const { text } = this.state;
     addTweet({
