@@ -27,23 +27,35 @@ export class NewTweet extends Component {
     if (!user || isEmpty(user)) {
       return null;
     }
+
     return (
       <div className="new-tweet">
         <Avatar src={user.avatar} />
-        <input
-          className="new-tweet-input"
-          placeholder="What's happening?"
-          data-testid="new-tweet-input"
-          onChange={({ target: { value } }) => this.setState({ text: value })}
-        />
-        <button
-          className="new-tweet-button"
-          type="button"
-          data-testid="new-tweet-button"
-          onClick={this.publishTweet}
-        >
-          Tweet
-        </button>
+
+        <div className="new-tweet-input-container">
+          <textarea
+            className="new-tweet-input"
+            placeholder="What's happening?"
+            data-testid="new-tweet-input"
+            onChange={({ target: { value } }) => this.setState({ text: value })}
+            rows={3}
+          />
+
+          <div className="new-tweet-action-container">
+            <div>
+              <img className="new-tweet-action" src="images/mock-tweet-actions.png" alt="tweet actions" />
+            </div>
+
+            <button
+              className="new-tweet-button"
+              type="button"
+              data-testid="new-tweet-button"
+              onClick={this.publishTweet}
+            >
+              Tweet
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
