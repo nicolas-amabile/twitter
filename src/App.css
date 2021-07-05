@@ -113,17 +113,34 @@
 }
 
 .new-tweet-input {
-  flex: 1;
-  margin: 0 10px;
+  border: 0;
+  appearance: none;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .new-tweet-button {
+  appearance: none;
+  border: 0;
   border-radius: 20px;
   background-color: cornflowerblue;
   color: white;
-  height: 30px;
-  padding: 0 10px;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
+}
+
+.new-tweet-input-container {
+  flex: 1;
+}
+
+.new-tweet-action-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-tweet-action {
+  height: 25px;
 }
 
 .follow-button {
