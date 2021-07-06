@@ -7,6 +7,7 @@ import TweetsList from './components/TweetsList';
 import SideBar from './components/SideBar';
 import './App.css';
 
+// Should refactor to a functional component soon! 
 class App extends Component {
   componentDidMount() {
     this.props.getTweets();
