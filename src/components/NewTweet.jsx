@@ -5,12 +5,22 @@ import { addTweet as addTweetAction } from '../actions';
 import Avatar from './Avatar';
 import { isEmpty } from '../utils';
 
+const LOCALSTORAGE_TWEET = 'new-tweet';
+
 // const MAX_CHARS = 60; // TODO: Implement max for input
-
 export class NewTweet extends Component {
-  state = { text: '' }
 
-  publishTweet() {
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
+
+  componentDidMount() {
+    const localStorageValue = window.localStorage.getItem(LOCALSTORAGE_TWEET);
+    this.setState({ text: localStorageValue });
+  }
+
+  publishTweet = () => {
     const { user, addTweet } = this.props;
     const { text } = this.state;
     addTweet({
@@ -22,8 +32,14 @@ export class NewTweet extends Component {
     });
   }
 
+  handleInput = (event) => {
+    this.setState({ text: event.target.value });
+    window.localStorage.setItem(LOCALSTORAGE_TWEET, event.target.value);
+  }
+
   render() {
     const { user } = this.props;
+    const { text } = this.state;
     if (!user || isEmpty(user)) {
       return null;
     }
@@ -34,7 +50,8 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
-          onChange={({ target: { value } }) => this.setState({ text: value })}
+          onChange={(event) => this.handleInput(event)}
+          value={text}
         />
         <button
           className="new-tweet-button"
