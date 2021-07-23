@@ -3,7 +3,7 @@ import {
   ADD_TWEET,
   // ADD_COMMENT,
   LIKE_TWEET,
-} from '../constants';
+} from "../constants";
 
 export default function tweets(state = [], action) {
   switch (action.type) {
