@@ -10,6 +10,12 @@ import { isEmpty } from '../utils';
 export class NewTweet extends Component {
   state = { text: '' }
 
+  componentDidMount() {
+    this.setState(() => ({
+      text: window.localStorage.getItem('tweetMessage'),
+    }));
+  }
+
   publishTweet() {
     const { user, addTweet } = this.props;
     const { text } = this.state;
@@ -20,10 +26,12 @@ export class NewTweet extends Component {
       date: new Date(),
       retweets: 0,
     });
+    this.setState(() => ({ text: '' }));
   }
 
   render() {
     const { user } = this.props;
+    const { text: tweetMessage } = this.state;
     if (!user || isEmpty(user)) {
       return null;
     }
@@ -34,13 +42,17 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
-          onChange={({ target: { value } }) => this.setState({ text: value })}
+          value={tweetMessage}
+          onChange={({ target: { value } }) => {
+            this.setState({ text: value });
+            window.localStorage.setItem('tweetMessage', value);
+          }}
         />
         <button
           className="new-tweet-button"
           type="button"
           data-testid="new-tweet-button"
-          onClick={this.publishTweet}
+          onClick={() => this.publishTweet()}
         >
           Tweet
         </button>
