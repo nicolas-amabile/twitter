@@ -7,6 +7,11 @@ import { isEmpty } from '../utils';
 
 // const MAX_CHARS = 60; // TODO: Implement max for input
 
+function useSaveTweet (text) {
+  const [tweet, setTweer] = useState(text);
+  
+}
+
 export class NewTweet extends Component {
   state = { text: '' }
 
