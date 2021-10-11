@@ -22,6 +22,21 @@ export class NewTweet extends Component {
     });
   }
 
+  // Saves draft tweet into local storage
+  draftTweet(value){
+    this.setState({text: value});
+    window.localStorage.setItem('pendingTweet', value);
+  }
+
+  // When component mounted read storage
+  componentDidMount(){
+    var tweet = window.localStorage.getItem('pendingTweet');
+    console.log(tweet)
+    if(tweet !== undefined){
+      this.setState({text: tweet})
+    }
+  }
+
   render() {
     const { user } = this.props;
     if (!user || isEmpty(user)) {
@@ -34,7 +49,8 @@ export class NewTweet extends Component {
           className="new-tweet-input"
           placeholder="What's happening?"
           data-testid="new-tweet-input"
-          onChange={({ target: { value } }) => this.setState({ text: value })}
+          onChange={({ target: { value } }) => this.draftTweet(value)}
+          value={this.state.text}
         />
         <button
           className="new-tweet-button"
